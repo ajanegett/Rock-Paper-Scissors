@@ -54,7 +54,7 @@
       function game() {
         let userScore = 0;
         let computerScore = 0;
-        while (userScore <= 5 && computerScore <= 5) {
+        while (userScore < 5 && computerScore < 5) {
           let UserInput = prompt("Rock, Paper, or Scissors?");
           let ComputerOutput = getComputerChoice();
           switch (evaluateChoice(UserInput, ComputerOutput)) {
