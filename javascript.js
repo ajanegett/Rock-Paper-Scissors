@@ -4,7 +4,7 @@ let results = document.querySelector(".results");
 let p = document.createElement("p");
 let userScoreDiv = document.querySelector(".userscore");
 let compScoreDiv = document.querySelector(".computerscore");
-let resetButton = document.querySelector('.reset')
+let resetButton = document.querySelector(".reset");
 
 userScoreDiv.textContent = userScore;
 compScoreDiv.textContent = computerScore;
@@ -23,7 +23,6 @@ function getComputerChoice() {
     default:
       console.error("Switch statement error");
       break;
-      return null;
   }
 }
 function capitalize(x) {
@@ -86,7 +85,7 @@ function playRound(UserInput) {
 }
 
 function excetuer(e) {
-    playRound(e.target.textContent);
+  playRound(e.target.textContent);
 }
 
 let btnList = document.querySelectorAll(".btn");
@@ -94,13 +93,13 @@ btnList.forEach((btn) => {
   btn.addEventListener("click", excetuer);
 });
 
-resetButton.addEventListener('click', function() {
-    userScore = 0;
-    computerScore = 0;
-    userScoreDiv.textContent = userScore;
-    compScoreDiv.textContent = computerScore;
-    results.textContent = "resetted";
-    btnList.forEach((btn) => {
-        btn.addEventListener("click", excetuer);
-      });
-})
+resetButton.addEventListener("click", function () {
+  userScore = 0;
+  computerScore = 0;
+  userScoreDiv.textContent = userScore;
+  compScoreDiv.textContent = computerScore;
+  results.textContent = "resetted";
+  btnList.forEach((btn) => {
+    btn.addEventListener("click", excetuer);
+  });
+});
