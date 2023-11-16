@@ -1,10 +1,11 @@
 let userScore = 0;
 let computerScore = 0;
 let results = document.querySelector(".results");
-let p = document.createElement("p");
 let userScoreDiv = document.querySelector(".userscore");
 let compScoreDiv = document.querySelector(".computerscore");
 let resetButton = document.querySelector(".reset");
+let userChoosed = document.querySelector(".userChoosed");
+let computerChoosed = document.querySelector(".computerChoosed");
 
 userScoreDiv.textContent = userScore;
 compScoreDiv.textContent = computerScore;
@@ -46,8 +47,43 @@ function evaluateChoice(playerSelection, computerSelection) {
   }
 }
 
+function printChoosed(usr, comp) {
+  switch (capitalize(usr)) {
+    case "Rock":
+      userChoosed.textContent = "🪨";
+      break;
+
+    case "Scissors":
+      userChoosed.textContent = "✂️";
+      break;
+
+    case "Paper":
+      userChoosed.textContent = "📃";
+
+    default:
+      break;
+  }
+
+  switch (capitalize(comp)) {
+    case "Rock":
+      computerChoosed.textContent = "🪨";
+      break;
+
+    case "Scissors":
+      computerChoosed.textContent = "✂️";
+      break;
+
+    case "Paper":
+      computerChoosed.textContent = "📃";
+
+    default:
+      break;
+  }
+}
+
 function playRound(UserInput) {
   let ComputerOutput = getComputerChoice();
+  printChoosed(UserInput, ComputerOutput)
   switch (evaluateChoice(UserInput, ComputerOutput)) {
     case "win":
       userScore += 1;
@@ -59,7 +95,6 @@ function playRound(UserInput) {
 
     case "lose":
       computerScore += 1;
-
       results.textContent = `You lose! ${capitalize(
         UserInput
       )} gets beaten by ${capitalize(ComputerOutput)}`;
@@ -72,7 +107,6 @@ function playRound(UserInput) {
       break;
   }
   if (userScore === 5) {
-    //winner is user
     btnList.forEach((btn) => btn.removeEventListener("click", excetuer));
     results.textContent = "You win the game!";
   }
@@ -84,7 +118,7 @@ function playRound(UserInput) {
   compScoreDiv.textContent = computerScore;
 }
 
-function excetuer(e) {
+function excetuer(e)  { //Callback function for buttons
   playRound(e.target.textContent);
 }
 
@@ -99,6 +133,8 @@ resetButton.addEventListener("click", function () {
   userScoreDiv.textContent = userScore;
   compScoreDiv.textContent = computerScore;
   results.textContent = "resetted";
+  userChoosed.textContent = "";
+  computerChoosed.textContent = "";
   btnList.forEach((btn) => {
     btn.addEventListener("click", excetuer);
   });

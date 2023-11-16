@@ -1,0 +1,127 @@
+body {
+  background-color: #2b3a42;
+  color: #efefef;
+}
+
+button {
+  background-color: #3f5765;
+  color: #ff530d;
+  width: 130px;
+  height: 50px;
+  font-size: 20px;
+  box-shadow: 0px 0px 20px 5px rgba(189, 212, 222, 0.75);
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(189, 212, 222, 0.75);
+  -moz-box-shadow: 0px 0px 20px 5px rgba(189, 212, 222, 0.75);
+  border: 1px solid #ff530d;
+  border-radius: 20px;
+}
+
+@keyframes up {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-2px);
+    }
+}
+
+button:hover {
+  background-color: #5a7c90;
+  animation: up 0.3s forwards;
+}
+
+
+button:active {
+  background-color: #131a1e;
+}
+
+.buttonArea {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+}
+
+.choiceArea {
+  display: flex;
+  height: 200px;
+  font-size: 2em;
+  text-align: center;
+  gap: 30px;
+  justify-content: center;
+}
+
+.cont {
+  background-color: #3f5765;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px;
+}
+
+.userChoosed,
+.computerChoosed {
+  font-size: 1.5em;
+}
+
+.results {
+  text-align: center;
+  font-size: 40px;
+}
+.parentRsp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #ff530d;
+  height: 200px;
+  width: 80vw;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background: rgba(255, 83, 13, 0.5);
+  box-shadow: 0 8px 32px 0 #5a7c90;
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+@media only screen and (max-width: 360px) {
+  .results {
+    font-size: 30px;
+  }
+  .usrp, .compp {
+    font-size: 30px;
+
+  }
+  .score {
+    height: 150px;
+    gap: none;
+  }
+}
+
+.score {
+  background-color: black;
+  color: red;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20vw;
+  width: 80vw;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 #5a7c90;
+  padding: 10px;
+}
+
+.usrp, .compp {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

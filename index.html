@@ -5,19 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button class="btn rock">Rock</button>
-    <button class="btn paper">Paper</button>
-    <button class="btn scissors">Scissors</button>
-    <button class="reset">Reset</button>
-    <div class="results"> </div>
-    <div class="score">
-      <div class="userscore">
-
+    <div class="buttonArea">
+      <button class="btn rock">Rock</button>
+      <button class="btn paper">Paper</button>
+      <button class="btn scissors">Scissors</button>
+      <button class="reset">Reset</button>
+    </div>
+    <div class="choiceArea">
+      <div class="cont user">
+        <div>You</div>
+        <div class="userChoosed"></div>
       </div>
-      <div class="computerscore">
-    
+      <div class="cont comp">
+        <div>Bot</div>
+        <div class="computerChoosed"></div>
+      </div>
+    </div>
+    <div class="parentRsp">
+      <div class="results">Start the game.</div>
+    </div>
+    <div class="score">
+      <div class="usrp">
+        <p>You</p>
+        <div class="userscore"></div>
+      </div>
+      <div class="compp">
+        <p>Bot</p>
+        <div class="computerscore"></div>
       </div>
     </div>
   </body>
